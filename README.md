@@ -48,7 +48,7 @@ As long as you want your bot responding, keep this running. When you want to sto
 sudo docker build -t support-bot \
     --build-arg bot_token='TOKEN' \
     --build-arg chat_id='ID' .
-sudo docker create --name redis-support-bot redis_db
+sudo docker create --name redis-support-bot redis
 sudo docker create --name support-bot --link redis-support-bot support-bot
 sudo docker start redis-support-bot
 sudo docker start support-bot
