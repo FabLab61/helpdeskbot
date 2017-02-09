@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:stable-slim
 
 ARG bot_token
 ARG chat_id
@@ -9,8 +9,7 @@ ARG redis_db=0
 ENV support_bot=/var/lib/support_bot
 
 RUN apt update
-RUN apt install -y gettext
-RUN apt install -y python3-pip
+RUN apt install -y --no-install-recommends gettext python3-pip
 
 RUN mkdir $support_bot
 
