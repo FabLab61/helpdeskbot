@@ -42,6 +42,18 @@ As long as you want your bot responding, keep this running. When you want to sto
     updater.stop()
 ```
 
+5. Deploy HelpDesk Bot:
+
+```
+sudo docker build -t support-bot \
+    --build-arg bot_token='TOKEN' \
+    --build-arg chat_id='ID' .
+sudo docker create --name redis-support-bot redis_db
+sudo docker create --name support-bot --link redis-support-bot support-bot
+sudo docker start redis-support-bot
+sudo docker start support-bot
+```
+
 **PS:** Keep in mind that you will have to generate the locale `.mo` files.
 
 # Contribute
