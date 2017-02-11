@@ -1,0 +1,42 @@
+#   This file is part of Support Bot.
+#   Copyright (C) 2017  Sergey Sherkunov <leinlawun@openmailbox.org>
+#
+#   This Support Bot is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This Support Bot is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU Affero General Public License for more details.
+
+msgid "Use /start to use this bot."
+msgstr "Используйте /start для начала взаимодействия с этим ботом."
+
+msgid "Please choose:"
+msgstr "Пожалуйста, выберете:"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "en_US"
+msgstr "English"
+
+msgid "ru_RU"
+msgstr "Русский"
+
+msgid "Support"
+msgstr "Поддержка"
+
+msgid "Help"
+msgstr "Справка"
+
+msgid "Please tell us, what is your problem."
+msgstr "Расскажите нам, в чём ваша проблема."
+
+msgid "Thanks for the feedback! We will answer you as soon as possible."
+msgstr "Спасибо за ваш фидбек! Мы вам ответим в ближайшее время."

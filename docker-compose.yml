@@ -1,0 +1,9 @@
+version: '2'
+services:
+  support-bot:
+    links:
+      - redis-support-bot
+    container_name: support-bot
+  redis-support-bot:
+    image: redis
+    container_name: redis-support-bot

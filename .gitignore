@@ -1,5 +1,3 @@
-# Compiled files
-*.pyc
-*.mo
-
 __pycache__
+*.pyc
+*.[pm]o

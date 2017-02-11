@@ -1,19 +1,34 @@
+#   This file is part of Support Bot.
+#   Copyright (C) 2017  Sergey Sherkunov <leinlawun@openmailbox.org>
+#
+#   This Support Bot is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This Support Bot is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU Affero General Public License for more details.
+
 FROM debian:stable-slim
 
-ARG bot_token
-ARG chat_id
-ARG redis_host=redis-support-bot
-ARG redis_port=6379
-ARG redis_db=0
+ARG BOT_DIR=/var/lib/support_bot
 
-ENV support_bot=/var/lib/support_bot
+ENV REDIS_HOST=redis-support-bot \
+    REDIS_PORT=6379 \
+    REDIS_DB=0 \
+    BOT_TOKEN= \
+    CHAT_ID=
 
-RUN mkdir $support_bot
+RUN apt update && \
+    apt install -y --no-install-recommends gettext python3-pip && \
+    mkdir $BOT_DIR
 
-COPY . $support_bot
+COPY . $BOT_DIR
 
-WORKDIR $support_bot
+WORKDIR $BOT_DIR
 
-RUN ./configure.sh && rm configure.sh
+RUN pip3 install -r requirements.txt && rm requirements.txt
 
-CMD $support_bot/startup
+ENTRYPOINT ./bot.py
