@@ -13,7 +13,8 @@
 
 FROM debian:stable-slim
 
-ARG BOT_DIR=/var/lib/support_bot
+ARG BOT=support_bot
+ARG BOT_DIR=/var/lib/$BOT
 
 ENV REDIS_HOST=redis-support-bot \
     REDIS_PORT=6379 \
@@ -28,6 +29,8 @@ RUN apt update && \
 COPY . $BOT_DIR
 
 WORKDIR $BOT_DIR
+
+RUN ./locale.sh && rm locale.sh
 
 RUN pip3 install -r requirements.txt && rm requirements.txt
 
