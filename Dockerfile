@@ -31,4 +31,4 @@ WORKDIR $BOT_DIR
 
 RUN pip3 install -r requirements.txt && rm requirements.txt
 
-ENTRYPOINT ./bot.py
+ENTRYPOINT ./support_bot.py
